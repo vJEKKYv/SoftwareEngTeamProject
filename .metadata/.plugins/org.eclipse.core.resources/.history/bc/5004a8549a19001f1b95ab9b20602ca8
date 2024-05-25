@@ -1,0 +1,28 @@
+package MemberManage;
+import Member.Member;
+import java.util.*;
+public class MemberManager {
+	int index;
+	Member mList[];
+	Scanner scan;
+	public MemberManager(int max) {
+		index = 0;
+		mList = new Member[max];
+		scan = new Scanner(System.in);
+	}
+	public void AddMember() {
+		int id = index+1;
+		String name;
+		System.out.println("id = "+id);
+		System.out.print("Name: ");
+		name = scan.next();
+		mList[index++] = new Member(id, name);
+	}
+	public void ShowAllMembers() {
+		System.out.println("--------------------------------");
+		System.out.println("ID\t이름");
+		System.out.println("--------------------------------");
+		System.out.println("--------------------------------");
+		
+	}
+}

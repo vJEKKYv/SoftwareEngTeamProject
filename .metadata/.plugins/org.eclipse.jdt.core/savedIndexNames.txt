@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\학교\3학년\1학기\소프트웨어공학\설계프로젝트\.metadata\.plugins\org.eclipse.jdt.core
+2764289034.index
+1865797976.index
+2924028927.index

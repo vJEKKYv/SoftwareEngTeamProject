@@ -1,0 +1,11 @@
+package Main;
+import MemberManage.MemberManager;
+public class MMP {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MainMenu menu = new MainMenu();
+		MemberManager MM = new MemberManager(50);
+	}
+
+}

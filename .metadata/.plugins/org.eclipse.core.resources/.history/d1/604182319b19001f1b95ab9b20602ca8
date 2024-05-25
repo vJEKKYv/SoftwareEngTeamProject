@@ -1,0 +1,13 @@
+package Main;
+import java.util.*;
+public class MainMenu {
+	private int curMenu;
+	Scanner scan;
+	public MainMenu() {}
+	public int Issue() {
+		System.out.println("--< 메 뉴 >--------");
+		System.out.println("\t1. 멤버등록");
+		System.out.println("\t2. 멤버출력");
+		System.out.println("-----------------");
+	}
+}
