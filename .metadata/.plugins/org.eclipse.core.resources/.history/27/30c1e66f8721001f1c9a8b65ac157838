@@ -1,0 +1,30 @@
+package Main;
+import MemberManage.MemberManager;
+public class MMP {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MainMenu menu = new MainMenu();
+		MemberManager MM = new MemberManager(50);MM.init();
+		boolean check = true;
+		while(check) {
+			switch (menu.Issue()) {
+			case 1:{
+				MM.AddMember();
+				continue;
+			}
+			case 2:{
+				MM.ShowAllMembers();
+				continue;
+			}
+			case 0:{
+				check = false;
+				break;
+			}
+			default:
+				System.out.println("옳지 않은 값입니다. ");
+			}
+		}
+	}
+
+}
