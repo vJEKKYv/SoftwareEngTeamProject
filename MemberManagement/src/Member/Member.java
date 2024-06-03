@@ -1,7 +1,9 @@
-package Member;
+package member;
+
 /*
  * 멤버의 아이디와 이름을 저장하기 위한 객체
  */
+
 public class Member {
 	private int id;
 	private String name;

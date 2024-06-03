@@ -1,16 +1,18 @@
-package MemberManage;
-import Member.Member;
+package memberManage;
 import java.util.*;
+import member.Member;
+
 /*
  * 멤버를 추가, 저장, 출력하기 위한 객체
  */
+
 public class MemberManager {
 	int index;	//데이터 삽입이 가능한 칸을 표시하는 변수. 
 	private Member mList[];
 	Scanner scan;
 	//MemberManager가 관리한 Member의 크기를 입력 받아 결정. 
 	public MemberManager(int max) {
-		index = 0;
+		index = 0; //최초 선언시 0으로 초기화해 첫칸부터 삽입 가능함 알려줌. 
 		mList = new Member[max];
 		scan = new Scanner(System.in);
 	}
@@ -29,7 +31,7 @@ public class MemberManager {
 			System.out.println("멤버를 더 추가할 수 없습니다. ");
 			return;
 		}
-		int id = index+1;
+		int id = index+1;	// id는 자동으로 배정. id 순서대로 저장 되어 있으니 저장되는 위치보다 1 큰 값을 id로 선언. 
 		String name;
 		
 		System.out.println("id = "+id);
@@ -44,8 +46,7 @@ public class MemberManager {
 		System.out.println("--------------------------------");
 		System.out.println("ID\t이름");
 		System.out.println("--------------------------------");
-		//멤버 각각 출력
-		for(int i=0;i<index;i++) {
+		for(int i=0;i<index;i++) {	//index를 이용해 mList의 Member각각 showData함수 실행. 
 			mList[i].ShowData();
 		}
 		System.out.println("--------------------------------");
