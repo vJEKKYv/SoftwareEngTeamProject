@@ -11,7 +11,7 @@ public class Member {
 		this.id = id;
 		this.name = name;
 	}
-	// 멤버의 id와 name 출력
+	//멤버의 id와 name 출력
 	public void ShowData() {
 		System.out.println(id+"\t"+name);
 	}

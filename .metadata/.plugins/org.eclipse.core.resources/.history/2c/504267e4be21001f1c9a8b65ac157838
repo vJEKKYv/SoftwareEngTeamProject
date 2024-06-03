@@ -25,8 +25,8 @@ public class MainMenu {
 				curMenu = scan.nextInt();
 				return  curMenu;
 			} catch (InputMismatchException e) {	// 문자열 입력에 대한 예외처리. 
-				scan = new Scanner(System.in);	// scanner를 초기화해 오류를 풀어준다. 
-				System.out.println(">> Error. 숫자를 입력해주세요.");
+				scan = new Scanner(System.in);
+				System.out.println(" >> Error. 숫자를 입력해주세요.");
 				continue;
 			}
 		}
