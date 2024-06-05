@@ -1,0 +1,42 @@
+package main;
+import java.util.*;
+
+/*
+ * User에게 메뉴를 띄우고 숫자를 입력받는 객체
+ */
+
+public class MainMenu {
+	public static MainMenu mainmenu;
+	private int curMenu;
+	Scanner scan;
+	private MainMenu() { scan = new Scanner(System.in); }
+	
+	public static MainMenu getMenu() { // 싱글톤 적용. MainMenu를 외부에서 생성하려면 이 함수만을 이용해야 함. 
+        if (mainmenu == null) {
+        	mainmenu = new MainMenu();
+        }
+        return mainmenu;
+    }
+	
+	// 주메뉴. 메뉴를 띄우고 입력값 반환. 
+	public int Issue() {
+		while(true) {
+			System.out.println("--< 메 뉴 >--------");
+			System.out.println("  1. 멤버등록");
+			System.out.println("  2. 멤버출력");
+			System.out.println("");
+			System.out.println("  0. 종료");
+			System.out.println("-----------------");
+			System.out.print("  선택>> ");
+			
+			try {	//Exception 발생 가능한 부분 분리. 정상 입력 될 때 까지 while 루프 돌기
+				curMenu = scan.nextInt();
+				return  curMenu;
+			} catch (InputMismatchException e) {	// 문자열 입력에 대한 예외처리. 
+				scan = new Scanner(System.in);	// scanner를 초기화해 오류를 풀어준다. 
+				System.out.println(">> Error. 숫자를 입력해주세요.");
+				continue;
+			}
+		}
+	}
+}

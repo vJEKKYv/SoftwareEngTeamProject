@@ -6,4 +6,10 @@
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="memberManage.MemberManager"/>
+    <fullyQualifiedTypeName name="main.MainMenu"/>
+    <fullyQualifiedTypeName name="member.Member"/>
+    <fullyQualifiedTypeName name="main.MMP"/>
+    <fullyQualifiedTypeName name="memberfactory.DefaultMemberFactory"/>
+    <fullyQualifiedTypeName name="memberfactory.MemberFactory"/>
 </qualifiedTypeNameHistroy>
