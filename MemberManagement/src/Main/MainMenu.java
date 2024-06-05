@@ -6,9 +6,17 @@ import java.util.*;
  */
 
 public class MainMenu {
+	public static MainMenu mainmenu;
 	private int curMenu;
 	Scanner scan;
-	public MainMenu() { scan = new Scanner(System.in); }
+	private MainMenu() { scan = new Scanner(System.in); }
+	
+	public static MainMenu getMenu() { // 싱글톤 적용. MainMenu를 외부에서 생성하려면 이 함수만을 이용해야 함. 
+        if (mainmenu == null) {
+        	mainmenu = new MainMenu();
+        }
+        return mainmenu;
+    }
 	
 	// 주메뉴. 메뉴를 띄우고 입력값 반환. 
 	public int Issue() {

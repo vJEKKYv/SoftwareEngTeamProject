@@ -1,8 +1,0 @@
-package Main;
-import java.util.*;
-public class MainMenu {
-	private int curMenu;
-	Scanner scan;
-	public MainMenu() {}
-	
-}

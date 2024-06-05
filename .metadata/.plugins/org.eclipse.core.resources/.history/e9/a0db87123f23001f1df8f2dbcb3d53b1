@@ -1,0 +1,6 @@
+package memberfactory;
+import member.Member;
+
+public interface MemberFactory {
+	Member createMember(int id, String name);
+}

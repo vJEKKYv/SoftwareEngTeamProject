@@ -1,21 +1,34 @@
-package memberManage;
+package membermanage;
 import java.util.*;
 import member.Member;
+import memberfactory.MemberFactory;
 
 /*
  * 멤버를 추가, 저장, 출력하기 위한 객체
  */
 
 public class MemberManager {
-	int index;				// 데이터 삽입이 가능한 칸을 표시하는 변수. 
+	private static MemberManager MM; // MemberManager를 싱글톤으로 반환하기 위한 인스턴스
+	private int index;				// 데이터 삽입이 가능한 칸을 표시하는 변수. 
 	private Member mList[];	// 멤버 저장 리스트
-	Scanner scan;
+	private Scanner scan;
+	private MemberFactory factory; // 팩토리 메서드 패턴을 위한 선언
+	
 	// MemberManager가 관리한 Member의 크기를 입력 받아 결정. 
-	public MemberManager(int max) {	// 멤버리스트의 크기 입력 받아서 초기화. 
+	private MemberManager(int max) {	// 멤버리스트의 크기 입력 받아서 초기화. 
 		index = 0;	// 최초 선언시 0으로 초기화해 첫칸부터 삽입 가능함 알려줌. 
 		mList = new Member[max];
 		scan = new Scanner(System.in);
+		factory = new MemberFactory();
 	}
+	
+
+    public static MemberManager getMM(int max) { // 싱글톤 적용. MemberManager를 외부에서 생성하려면 이 함수만을 이용해야 함. 
+        if (MM == null) {
+            MM = new MemberManager(max);
+        }
+        return MM;
+    }
 	
 	// 멤버 기본 데이터 선언
 	public void Init() {
@@ -37,8 +50,9 @@ public class MemberManager {
 		System.out.println("id = "+id);
 		System.out.print("Name: ");
 		name = scan.next();
-		// 입력 받은 것 추가
-		mList[index++] = new Member(id, name);	//id와 입력받은 name을 저장
+		// 입력 받은 것 factory로 생성
+		Member member = factory.createMember(id, name);
+		mList[index++] = member;	//member를 mList에 삽입
 	}
 	
 	// Member 출력

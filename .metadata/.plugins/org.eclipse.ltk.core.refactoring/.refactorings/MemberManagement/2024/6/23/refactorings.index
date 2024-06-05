@@ -10,3 +10,8 @@
 1717427055245	Rename package 'Main'
 1717427062752	Rename package 'Member'
 1717427072867	Rename package 'MemberManage'
+1717592858012	Rename package 'memberManage'
+1717592920741	Rename type 'factory'
+1717593095975	Delete element
+1717593100413	Rename compilation unit 'MemberFactory1.java'
+1717593924633	Delete element

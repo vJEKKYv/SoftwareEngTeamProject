@@ -1,0 +1,5 @@
+package memberfactory;
+
+public interface MemberFactory {
+
+}

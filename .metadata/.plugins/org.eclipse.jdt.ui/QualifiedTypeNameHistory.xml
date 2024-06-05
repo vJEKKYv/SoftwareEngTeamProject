@@ -3,4 +3,7 @@
     <fullyQualifiedTypeName name="Member.Member"/>
     <fullyQualifiedTypeName name="Main.MainMenu"/>
     <fullyQualifiedTypeName name="MemberManage.MemberManager"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

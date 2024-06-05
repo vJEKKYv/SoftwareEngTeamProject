@@ -1,0 +1,69 @@
+package memberManage;
+import java.util.*;
+import member.Member;
+
+/*
+ * 멤버를 추가, 저장, 출력하기 위한 객체
+ */
+
+public class MemberManager {
+	private static MemberManager MM; // MemberManager를 싱글톤으로 반환하기 위한 인스턴스
+	private int index;				// 데이터 삽입이 가능한 칸을 표시하는 변수. 
+	private Member mList[];	// 멤버 저장 리스트
+	Scanner scan;
+	// MemberManager가 관리한 Member의 크기를 입력 받아 결정. 
+	private MemberManager(int max) {	// 멤버리스트의 크기 입력 받아서 초기화. 
+		index = 0;	// 최초 선언시 0으로 초기화해 첫칸부터 삽입 가능함 알려줌. 
+		mList = new Member[max];
+		scan = new Scanner(System.in);
+	}
+	
+
+    public static MemberManager getMM(int max) { // 싱글톤 적용. MemberManager를 외부에서 생성하려면 이 함수만을 이용해야 함. 
+        if (MM == null) {
+            MM = new MemberManager(max);
+        }
+        return MM;
+    }
+	
+	// 멤버 기본 데이터 선언
+	public void Init() {
+		Member member = Member.getMember();
+		member.initialize(index+1, "김철수");
+		mList[index++] = member;
+		member.initialize(index+1, "이영희");
+		mList[index++] = member;
+		member.initialize(index+1, "George Washington");
+		mList[index++] = member;
+		member.initialize(index+1, "Joe Biden");
+		mList[index++] = member;
+	}
+	// Member 등록
+	public void AddMember() {
+		if(index >= mList.length) {	// 멤버 추가시 리스트를 벗어나서 추가하지 못하도록 함. 
+			System.out.println("리스트가 가득 찼습니다. ");
+			System.out.println("멤버를 더 추가할 수 없습니다. ");
+			return;
+		}
+		int id = index+1;	// id는 자동으로 배정. id 순서대로 저장 되어 있으니 저장되는 위치보다 1 큰 값을 id로 선언. 
+		String name;
+		Member member;
+		System.out.println("id = "+id);
+		System.out.print("Name: ");
+		name = scan.next();
+		// 입력 받은 것 추가
+		mList[index++] = Member.getMember(id, name);	//id와 입력받은 name을 저장
+	}
+	
+	// Member 출력
+	public void ShowAllMembers() {
+		System.out.println("--------------------------------");
+		System.out.println("ID\t이름");
+		System.out.println("--------------------------------");
+		for(int i=0;i<index;i++) {	// index를 이용해 mList의 Member각각 showData함수 실행. 
+			mList[i].ShowData();
+		}
+		System.out.println("--------------------------------");
+		
+	}
+}

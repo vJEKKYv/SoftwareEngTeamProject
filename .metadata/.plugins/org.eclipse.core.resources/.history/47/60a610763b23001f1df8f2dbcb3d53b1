@@ -1,0 +1,31 @@
+package member;
+
+import memberManage.MemberManager;
+
+/*
+ * 멤버의 아이디와 이름을 저장하기 위한 객체
+ */
+
+public class Member {
+	public static Member Mem;
+	private int id;
+	private String name;
+	private Member() {
+		// 인스턴스화 방지를위한 private 객체 생성문
+	}
+	public static Member getMember() {
+		if (Mem == null) {
+            Mem = new Member();
+        }
+        return Mem;
+	}
+	public void initialize(int id, String name) { // 멤버 객체에 각 값 대입
+		this.id = id;
+		this.name = name;
+	}
+	// 멤버의 id와 name 출력
+	public void ShowData() {
+		System.out.println(id+"\t"+name);
+	}
+	
+}

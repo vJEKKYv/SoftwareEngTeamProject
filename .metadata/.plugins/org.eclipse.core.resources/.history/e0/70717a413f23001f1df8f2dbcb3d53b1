@@ -1,0 +1,8 @@
+package memberfactory;
+import member.Member;
+
+public class MemberFactory {
+    public Member createMember(int id, String name) {
+        return new Member(id, name);
+    }
+}

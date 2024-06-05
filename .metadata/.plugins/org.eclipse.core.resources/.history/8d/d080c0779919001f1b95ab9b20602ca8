@@ -1,7 +1,0 @@
-package MemberManage;
-
-public class MemberManager {
-	int index;
-	Member[] mList;
-
-}

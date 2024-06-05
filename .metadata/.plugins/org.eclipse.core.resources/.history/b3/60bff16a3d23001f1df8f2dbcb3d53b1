@@ -1,0 +1,10 @@
+package memberfactory;
+
+import member.Member;
+
+public abstract class MemberFactory implements MemberFactory {
+    @Override
+    public Member createMember(int id, String name) {
+        return new Member(id, name);
+    }
+}

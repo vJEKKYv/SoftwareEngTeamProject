@@ -1,5 +1,6 @@
 package main;
-import memberManage.MemberManager;
+
+import membermanage.MemberManager;
 
 /*
  * 시스템 실행을 담당하는 메인 함수 선언 객체. 
@@ -8,8 +9,8 @@ import memberManage.MemberManager;
 public class MMP {
 	private static int MAX_MEMBER_NUM = 50; // MemberManager에서 사용할 리스트 크기 선언
 	public static void main(String[] args) {
-		MainMenu menu = new MainMenu();
-		MemberManager MM = new MemberManager(MAX_MEMBER_NUM);	MM.Init();	// 기본 데이터 추가. 
+		MainMenu menu = MainMenu.getMenu();
+		MemberManager MM = MemberManager.getMM(MAX_MEMBER_NUM);	MM.Init();	// 기본 데이터 추가. 
 		
 		while(true) {	// issue에서 받은 값을 분류, 함수 실행. 그것을 반복한다. 
 			switch (menu.Issue()) {

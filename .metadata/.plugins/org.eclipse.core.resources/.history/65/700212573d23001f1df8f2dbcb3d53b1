@@ -1,0 +1,14 @@
+package memberfactory;
+import member.Member;
+public interface MemberFactory {
+	Member createMember(int id, String name);
+}
+
+public abstract class DefaultMemberFactory implements MemberFactory {
+    @Override
+    public Member createMember(int id, Scanner scan) {
+        System.out.print("Name: ");
+        String name = scan.next();
+        return new Member(id, name);
+    }
+}
